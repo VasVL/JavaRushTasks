@@ -1,0 +1,132 @@
+К  К        ЛЛ  ЕЕЕЕЕЕЕ  ТТТТТТТ  К  К  И     И
+К К        Л Л  Е           Т     К К   И    ИИ
+КК        Л  Л  Е           Т     КК    И   И И
+Л        Л   Л  ЕЕЕЕ        Т     К     И  И  И
+КК      Л    Л  Е           Т     КК    И И   И
+К К    Л     Л  Е           Т     К К   ИИ    И
+К  К  Л      Л  ЕЕЕЕЕЕЕ     Т     К  К  И     И
+
+void setCellColor(int x, int y, Color color) — устанавливает клетке с координатами (x, y) цвет color
+
+Color getCellColor(int x, int y) — возвращает цвет клетки с координатами (x, y)
+
+void setCellValue(int x, int y, String value) — помещает в клетку с координатами (x, y) текст value
+
+String getCellValue(int x, int y) — возвращает текст, содержащийся в клетке с координатами (x, y)
+
+void setCellTextSize(int x, int y, int size) — устанавливает размер контента в клетке с координатами (x, y).
+size – высота текста в процентах от высоты клетки:
+
+setCellTextSize(2 , 0, 70); //  70% высоты клетки
+
+int getCellTextSize(int x, int y) — возвращает размер контента в клетке с координатами (x, y):
+
+void setCellNumber(int x, int y, int value) — помещает в клетку с координатами (x, y) число value:
+
+int getCellNumber(int x, int y) — возвращает число, содержащееся в клетке с координатами (x, y).
+Если в клетке содержится не число, возвращает 0:
+
+void setCellTextColor(int x, int y, Color color) — устанавливает цвет контента(текста) в клетке с координатами (x, y):
+
+Color getCellTextColor(int x, int y) — возвращает цвет контента (текста) в клетке с координатами (x, y):
+
+Для удобства есть несколько методов setCellValueEx() с разным набором параметров:
+void setCellValueEx(int x, int y, Color cellColor, String value) — устанавливает клетке с координатами (x, y)
+цвет фона cellColor и контент value:
+
+void setCellValueEx(int x, int y, Color cellColor, String value, Color textColor) —
+устанавливает клетке с координатами (x, y) цвет фона cellColor, контент value и цвет контента textColor:
+
+void setCellValueEx(int x, int y, Color cellColor, String value, Color textColor, int textSize); —
+устанавливает клетке с координатами (x, y) цвет фона cellColor, контент value,
+цвет контента textColor и размер контента textSize:
+
+
+Ц   Ц    ВВВ   ЕЕЕЕЕ  ТТТТТ
+Ц   Ц    В  В  Е        Т
+Ц   Ц    ВВВ   ЕЕЕ      Т
+Ц   Ц    В  В  Е        Т
+ЦЦЦЦЦЦЦ  ВВВ   ЕЕЕЕЕ    Т
+      Ц
+
+//  переменной colors присваивается массив, содержащий все доступные цвета.
+Color[] colors = Color.values();
+
+Получить номер цвета в палитре очень просто:
+
+Color color = Color.RED;
+int redIndex = color.ordinal(); //  Номер красного цвета
+
+int blueIndex = Color.BLUE.ordinal(); //  Номер синего цвета
+
+Также можно получить цвет по его номеру:
+
+//  переменной color присваивается цвет с индексом 10 из enum Color.
+Color color = Color.values()[10];
+
+
+
+    ДД   И   И      А          Л        ООО    ГГГГГГ
+   Д Д   И  ИИ     А А        Л Л      О   О   Г
+  Д  Д   И И И    А   А      Л   Л    О     О  Г
+ Д   Д   ИИ  И   ААААААА    Л     Л    О   О   Г
+ДДДДДДД  И   И  А       А  Л       Л    ООО    Г
+Д     Д
+
+void showMessageDialog(Color cellColor, String message, Color textColor, int textSize)
+
+Здесь:
+cellColor — цвет фона диалогового окна;
+message — текст сообщения;
+textColor — цвет текста сообщения;
+textSize — размер текста сообщения.
+
+
+
+
+int getRandomNumber(int max) — возвращает случайное целое число от 0 до (max–1) включительно.
+
+int getRandomNumber(int min, int max)
+
+
+
+
+
+Чтобы запускать игры на сайте, они переводятся на сервере на JavaScript.
+В связи с этим появляются некоторые ограничения.
+В частности, при написании игр с использованием движка JavaRush нельзя работать с файлами,
+а также использовать все методы класса System, кроме currentTimeMillis(), setOut(), setErr(), arrayscopy().
+Также можно использовать поля err и out.
+
+Также не удастся опубликовать игру с бесконечными циклами.
+
+
+
+
+
+1. Работа с мышкой
+Для работы с мышкой у игрового движка есть два метода:
+
+void onMouseLeftClick(int x, int y);
+
+void onMouseRightClick(int x, int y);
+
+
+
+
+
+Для работы с клавиатурой у игрового движка есть два метода:
+
+void onKeyPress(Key key);
+
+void onKeyReleased(Key key);
+
+Key.ENTER	Пользователь нажал кнопку Enter
+Key.ESCAPE	Пользователь нажал кнопку Esc
+Key.PAUSE	Пользователь нажал кнопку Pause
+Key.SPACE	Пользователь нажал Пробел
+Key.LEFT	Пользователь нажал Стрелку Влево
+Key.RIGHT	Пользователь нажал Стрелку Вправо
+Key.UP	    Пользователь нажал Стрелку Вверх
+Key.DOWN	Пользователь нажал Стрелку Вниз
+Key.UNKNOWN	Любую клавишу, кроме вышеперечисленных
