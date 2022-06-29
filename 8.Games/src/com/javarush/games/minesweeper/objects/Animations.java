@@ -1,0 +1,30 @@
+package com.javarush.games.minesweeper.objects;
+
+import com.javarush.games.minesweeper.Tiles;
+
+public enum Animations {
+    MARIO_MOVE_RIGHT(Tiles.MARIO_MOVE_RIGHT_1, Tiles.MARIO_MOVE_RIGHT_2, Tiles.MARIO_MOVE_RIGHT_3),
+    MARIO_MOVE_LEFT(Tiles.MARIO_MOVE_LEFT_1, Tiles.MARIO_MOVE_LEFT_2, Tiles.MARIO_MOVE_LEFT_3),
+    MARIO_GET_FLAG(Tiles.MARIO_GET_FLAG_UP, Tiles.MARIO_GET_FLAG_DOWN),
+    SUPER_MARIO_MOVE_RIGHT(Tiles.SUPER_MARIO_MOVE_RIGHT_1, Tiles.SUPER_MARIO_MOVE_RIGHT_2, Tiles.SUPER_MARIO_MOVE_RIGHT_3),
+    SUPER_MARIO_MOVE_LEFT(Tiles.SUPER_MARIO_MOVE_LEFT_1, Tiles.SUPER_MARIO_MOVE_LEFT_2, Tiles.SUPER_MARIO_MOVE_LEFT_3),
+    SUPER_MARIO_GET_FLAG(Tiles.SUPER_MARIO_GET_FLAG_UP, Tiles.SUPER_MARIO_GET_FLAG_DOWN),
+    GOOMBA_MOVE(Tiles.GOOMBA_RIGHT, Tiles.GOOMBA_LEFT),
+    KOOPA_MOVE_RIGHT(Tiles.KOOPA_RIGHT_1, Tiles.KOOPA_RIGHT_2),
+    KOOPA_MOVE_LEFT(Tiles.KOOPA_LEFT_1, Tiles.KOOPA_LEFT_2),
+    FIREBALL_CLOCKWISE(Tiles.FIREBALL_CLOCKWISE_270, Tiles.FIREBALL_CLOCKWISE, Tiles.FIREBALL_CLOCKWISE_90, Tiles.FIREBALL_CLOCKWISE_180),
+    FIREBALL_COUNTER_CLOCKWISE(Tiles.FIREBALL_COUNTER_CLOCKWISE_270, Tiles.FIREBALL_COUNTER_CLOCKWISE, Tiles.FIREBALL_COUNTER_CLOCKWISE_90, Tiles.FIREBALL_COUNTER_CLOCKWISE_180),
+    FIREBALL_BLAST(Tiles.FIREBALL_BLAST_1, Tiles.FIREBALL_BLAST_2),
+    SUNFLOWER(Tiles.SUNFLOWER, Tiles.SUNFLOWER_1, Tiles.SUNFLOWER_2, Tiles.SUNFLOWER_3),
+    STAR(Tiles.STAR, Tiles.STAR_1, Tiles.STAR_2, Tiles.STAR_3),
+    COIN(Tiles.COIN, Tiles.COIN_1, Tiles.COIN_2, Tiles.COIN_1);
+
+    public final Tiles[] animationInTiles;
+
+    Animations(Tiles ... tiles){
+        animationInTiles = new Tiles[tiles.length];
+        for(int i = 0; i < tiles.length; i++){
+            animationInTiles[i] = tiles[i];
+        }
+    }
+}
